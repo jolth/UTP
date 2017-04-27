@@ -1,4 +1,4 @@
 # UTP
 
 usage:
-create images directory
+create ./images directory
