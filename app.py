@@ -2,13 +2,17 @@ import web
 from urls import urls
 
 #web.config.debug = False
-render = web.template.render('templates/')
+render = web.template.render('templates/', base='layout')
+#render = web.template.render('templates/')
 
 
-class index:
-    def GET(self, name=None):
-        return render.index(name)
-
+#class index:
+    #def GET(self, name=None):
+        #return render.index(name)
+        #return render.layout(name)
+class home:
+    def GET(self):
+        return render.home()
 
 class Upload:
     def GET(self):
