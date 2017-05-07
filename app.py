@@ -14,6 +14,10 @@ class home:
     def GET(self):
         return render.home()
 
+class Contact:
+    def GET(self):
+        return render.contact()
+
 class Upload:
     def GET(self):
         web.header("Content-Type", "text/html; charset=utf-8")
