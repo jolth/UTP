@@ -40,11 +40,19 @@ body {
   text-shadow: 0 .05rem .1rem rgba(59,39,82,.5);
 }
 body {
-  background: url(/static/images/241711.jpg) no-repeat center center fixed;
+  /*background: url(/static/images/241711.jpg) no-repeat center center fixed;*/
+  /*background: url(/static/images/263313.jpg) no-repeat center center fixed;*/
+  /*background: url(/static/images/742275.jpg) no-repeat center center fixed;*/
+  /*background: url(/static/images/200535.jpg) no-repeat center center fixed;*/
+  /*background: url(/static/images/1059777.jpg) no-repeat center center fixed;*/
+  /*background: url(/static/images/791474.jpg) no-repeat center center fixed;*/
+  /*background: url(/static/images/1536523.jpg) no-repeat center center fixed;*/
+  background: url(/static/images/1032754.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  opacity: 1;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
