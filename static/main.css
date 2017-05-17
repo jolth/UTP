@@ -39,13 +39,24 @@ body {
   /*text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);*/
   text-shadow: 0 .05rem .1rem rgba(59,39,82,.5);
 }
-body {
-  background: url(/static/images/background.jpg) no-repeat center center fixed;
+/*body {
+  background: url(/static/images/background.jpg) center center no-repeat fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   opacity: 1;
+}*/
+body {
+  background-image: url(/static/images/background.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-color: black;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
