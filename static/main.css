@@ -47,7 +47,21 @@ body {
   background-size: cover;
   opacity: 1;
 }*/
-body {
+/*body {
+  background-image: url(/static/images/background_3796_compress.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-color: black;
+}*/
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+
+.site-background {
   background-image: url(/static/images/background_3796_compress.jpg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -59,7 +73,6 @@ body {
   background-color: black;
 }
 
-/* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
   width: 100%;
@@ -184,4 +197,18 @@ body {
   .cover-container {
     width: 42rem;
   }
+}
+
+@media only screen and (max-width: 767px) {
+    .site-background {
+        background-image: url(/static/images/background_768_compress.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-color: #3b2752;
+    }
 }
