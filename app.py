@@ -18,6 +18,10 @@ class Contact:
     def GET(self):
         return render.contact()
 
+class Help:
+    def GET(self):
+        return render.help()
+
 class Upload:
     def GET(self):
         web.header("Content-Type", "text/html; charset=utf-8")
