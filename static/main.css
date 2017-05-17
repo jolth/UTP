@@ -15,10 +15,7 @@ a:hover {
 .btn-secondary:focus {
   color: #fff;
   text-shadow: none; /* Prevent inheritance from `body` */
-  /*background-color: #f1031f;*/
-  /*background-color: #30095C;*/
   background-color: #3b2752;
-  /*background-color: #4d257d;*/
   border: .05rem solid #fff;
 }
 
@@ -36,28 +33,8 @@ body {
 body {
   color: #fff;
   text-align: center;
-  /*text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);*/
   text-shadow: 0 .05rem .1rem rgba(59,39,82,.5);
 }
-/*body {
-  background: url(/static/images/background.jpg) center center no-repeat fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  opacity: 1;
-}*/
-/*body {
-  background-image: url(/static/images/background_3796_compress.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-color: black;
-}*/
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 
@@ -70,7 +47,7 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-color: black;
+  background-color: #3b2752;
 }
 
 .site-wrapper {
@@ -106,9 +83,7 @@ body {
 
 .masthead-brand {
   margin-bottom: 0;
-  /*color: #3b2752;*/
   font-weight: bold;
-  /*text-shadow: 0 .05rem .1rem rgba(246,240,454,.5);*/
 }
 
 .nav-masthead .nav-link {
