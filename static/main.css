@@ -20,6 +20,37 @@ a:hover {
 }
 
 
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    border: .1px solid #aaa;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-upload{
+    width: 100%;
+}
+
+.input-solid {
+    border: .1px solid #aaa;
+}
+
+
 /*
  * Base structure
  */
@@ -37,6 +68,11 @@ body {
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
+
+.container {
+    width: 90%;
+    margin: 20px auto 0px auto;
+}
 
 .site-background {
   background-image: url(/static/images/background_3796_compress.jpg);

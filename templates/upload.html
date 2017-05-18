@@ -2,7 +2,23 @@
     $var background:$None 
     $var javascriptfile: /static/main.js
 
-    <form method="post" enctype="multipart/form-data" action="">
-        <input type="file" name="myfile" /><br />
-        <input type="submit" />
+    <div class="container">
+
+    <form method="post" enctype="multipart/form-data" action=""> 
+      <div class="form-group">
+        <label>Enviar tallo de planta</label>
+        <div class="input-group">
+          <span class="input-group-btn">
+            <span class="btn btn-default btn-file">
+               Imagen #1 <input type="file" id="imgInp" name="myfile">
+            </span>
+          </span>
+          <input type="text" class="form-control input-solid" readonly>
+        </div>
+        <img id='img-upload'/>
+      </div>
+      <hr>
+      <button type="submit" class="btn btn-default">Procesar</button>
     </form>
+    
+    </div>
