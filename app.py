@@ -4,7 +4,7 @@ import cgi
 
 # Maximum input we will accept when REQUEST_METHOD is POST
 # 0 ==> unlimited input
-cgi.maxlen = 10 * 1024 * 1024 #10MB
+cgi.maxlen = 1 * 1024 * 1024 #10MB
 
 #web.config.debug = False
 render = web.template.render('templates/', base='layout')
@@ -30,10 +30,10 @@ class Upload:
 
     def POST(self):
         try:
-            img =  web.input(images={})
+            images =  web.input()
         except ValueError:
             return "File too large"
-        print img.keys
+        return images.keys()
 
     #def POST(self):
     #    x = web.input(myfile={})
