@@ -1,10 +1,10 @@
     $var title: Mora sin Tune :: Cotacto
     $var background:$None 
-    $var javascriptfile: /static/main.js
+    $var javascriptfile: /static/validate.js
   
     <div class="container">
 
-      <form>
+      <form id="form_contact">
         <div class="form-group">
           <input type="text" class="form-control" id="inputName"
           placeholder="Nombre" name="name">
@@ -20,9 +20,14 @@
 
         <div class="form-group">
           <div class="text-right">
-            <button type="submit" class="btn btn-default">Sign in</button>
+            <button type="submit" class="btn btn-default" id="btn_send"
+                disabled>Enviar</button>
           </div>
         </div>
       </form>
+
+      <div id="message" style="display: none">
+        <p>El mensaje se ha enviado con éxito</>
+      </div>
 
     </div>
