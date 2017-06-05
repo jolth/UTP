@@ -1,0 +1,3 @@
+web.py==0.38
+simplejson==3.10.0
+
