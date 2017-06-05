@@ -10,8 +10,8 @@ $(document).ready(function () {
 
     $('#inputName, #inputEmail, #inputMessage').keyup(toggleEnableContinue);
 
-    $('#form_contact').submit(function(e) {
-        e.preventDefault();
+    $('#form_contact').submit(function(event) {
+        event.preventDefault();
         $(this).hide();
         $('#message').show();
     });
