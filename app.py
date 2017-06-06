@@ -4,6 +4,7 @@ import cgi
 import urllib
 import urllib2
 import json
+import requests
 #import simplejson as json
 
 # Maximum input we will accept when REQUEST_METHOD is POST
@@ -57,8 +58,9 @@ class Upload:
 
         #images = dict(web.input())
         images = web.input()
+        url = 'http://127.0.0.1:3030/sever/'
         filedir = '/tmp'
-        data_string = {"Id": Upload.upload_id}
+        data_string = {"Id": str(Upload.upload_id)}
         #filedir = './images'
 
         #if 'myfile' in x:
@@ -80,9 +82,14 @@ class Upload:
             data_string.update({"Tallo" + str(counter): filepath})
             #return images[value]
         json_data = json.dumps(data_string)
-        encoded_args = urllib.urlencode(json_data)
-        url = 'http://127.0.0.1:3030/sever/'
-        return urllib2.urlopen(url, encoded_args).read()
+        print "JSON:", json_data
+        #print "DRAW:", data_string
+        #encoded_args = urllib.urlencode(json_data)
+        #return urllib2.urlopen(url, encoded_args).read()
+        respond = requests.post(url, json=json_data)
+        print respond.status_code
+        return respond.json()
+
 
         #for k,v in images.items():
         #    filename = k + '_' + str(Upload.upload_id)
