@@ -58,7 +58,7 @@ class Upload:
 
         #images = dict(web.input())
         images = web.input()
-        url = 'http://127.0.0.1:3030/sever/'
+        #url = 'http://127.0.0.1:3030/sever/'
         filedir = '/tmp'
         data_string = {"Id": str(Upload.upload_id)}
         #filedir = './images'
@@ -81,20 +81,27 @@ class Upload:
             #data_string.update("Tallo" + str(counter), filepath)
             data_string.update({"Tallo" + str(counter): filepath})
             #return images[value]
-        json_data = json.dumps(data_string)
-        print "JSON:", json_data
-        #print "DRAW:", data_string
-        #encoded_args = urllib.urlencode(json_data)
-        #return urllib2.urlopen(url, encoded_args).read()
+        #json_data = json.dumps(data_string)
+        #print "JSON:", json_data
+        print "DRAW:", data_string
+        #respond = requests.post(url, json=json_data)
+        #print respond.status_code
+        encoded_args = urllib.urlencode(data_string)
+        print "ENCODED: ", encoded_args
+        #return encoded_args 
+        #raise web.seeother('/severity?' + encoded_args)
+        #raise web.seeother('/severity?f=1')
+        raise web.seeother('/severity?' +  encoded_args)
+
+
+class Severity:
+
+    def GET(self):
+        json_data = json.dumps(web.input())
+        url = 'http://127.0.0.1:3030/sever/'
         respond = requests.post(url, json=json_data)
-        print respond.status_code
+        print "RESPOND:", respond.status_code
         return respond.json()
-
-
-        #for k,v in images.items():
-        #    filename = k + '_' + str(Upload.upload_id)
-        #    filepath = filedir + '/' + filename
-        #    with open(filepath, r'w') as f:
 
 
 if __name__ == "__main__":

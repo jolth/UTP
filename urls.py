@@ -4,5 +4,6 @@ urls = (
             '/', 'home',
             '/contact', 'Contact',
             '/help', 'Help',
-            '/upload', 'Upload'
+            '/upload', 'Upload',
+            '/severity', 'Severity'
         )
