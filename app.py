@@ -4,7 +4,8 @@ import cgi
 import urllib
 import urllib2
 import json
-import requests
+import subprocess
+#import requests
 #import simplejson as json
 
 # Maximum input we will accept when REQUEST_METHOD is POST
@@ -91,17 +92,18 @@ class Upload:
         #return encoded_args 
         #raise web.seeother('/severity?' + encoded_args)
         #raise web.seeother('/severity?f=1')
-        raise web.seeother('/severity?' +  encoded_args)
+        raise web.seeother('/severity?' + encoded_args)
 
 
 class Severity:
-
     def GET(self):
         json_data = json.dumps(web.input())
         url = 'http://127.0.0.1:3030/sever/'
-        respond = requests.post(url, json=json_data)
-        print "RESPOND:", respond.status_code
-        return respond.json()
+        #respond = requests.post(url, json=json_data)
+        #print "RESPOND:", respond.status_code
+        #return respond.json()
+        output = subprocess.check_output(['curl', '-XPOST', url, '-d', str(json_data)])
+        return output
 
 
 if __name__ == "__main__":
