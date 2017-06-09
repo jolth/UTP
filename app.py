@@ -103,7 +103,7 @@ class Severity:
         #print "RESPOND:", respond.status_code
         #return respond.json()
         output = subprocess.check_output(['curl', '-XPOST', url, '-d', str(json_data)])
-        return output
+        return render.severity(output)
 
 
 if __name__ == "__main__":
