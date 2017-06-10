@@ -4,10 +4,9 @@ $def with(json_data)
     $var javascriptfile:$None
 
     <div class="container">
-        <div class="page-header">
+        <!--<div class="page-header">
             <h2>Morant: <small>Severidad mora con tuna</small></h2>
-        </div>
-        <div>
+        </div>-->
             $for i in json_data:
                 $if i == "porcentaje":
                     <div class="alert alert-danger" role="alert">
@@ -23,5 +22,4 @@ $def with(json_data)
                     </tbody>
                 </table>
 
-        </div>
     </div>
