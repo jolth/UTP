@@ -3,23 +3,31 @@ $def with(json_data)
     $var background:$None 
     $var javascriptfile:$None
 
+    $code:
+        def alert(level):
+            if level == "nulo": return "alert-success"  
+            elif level == "bajo": return "alert-info"
+            elif level == "medio": return "alert-warning"
+            elif level == "alto": return "alert-danger"
+
+
     <div class="container">
         <!--<div class="page-header">
             <h2>Morant: <small>Severidad mora con tuna</small></h2>
         </div>-->
-            $for i in json_data:
-                $if i == "porcentaje":
-                    <div class="alert alert-danger" role="alert">
-                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                        <span class="sr-only">Error:</span>
-                        $json_data[i].capitalize()
-                    </div>
-            $for i,v in enumerate(json_data["mensaje"], 1):
-                <table class="table table-bordered">
-                    <tbody>
-                        <tr><th scope="row">Medidas:</th><td>$v['medidas']</td></tr>
-                        <tr><th scope="row">Tratamiento:</th><td>$v['tratamiento']</td></tr>
-                    </tbody>
-                </table>
+    $for i in json_data:
+        $if i == "porcentaje":
+            <div class="alert $alert(json_data[i])" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                $json_data[i].capitalize()
+            </div>
+    $for i,v in enumerate(json_data["mensaje"], 1):
+        <table class="table table-bordered">
+            <tbody>
+                <tr><th scope="row">Medidas:</th><td>$v['medidas']</td></tr>
+                <tr><th scope="row">Tratamiento:</th><td>$v['tratamiento']</td></tr>
+            </tbody>
+        </table>
 
     </div>
