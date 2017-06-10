@@ -5,7 +5,17 @@ $def with(json_data)
 
     <div class="container">
         <div class="page-header">
-            <h2>Morant: <small>Severidad mora con tune</small></h2>
-            $json_data
+            <h2>Morant: <small>Severidad mora con tuna</small></h2>
+        </div>
+        <div>
+            $for i in json_data:
+                $if i == "porcentaje":
+                    <div class="alert alert-danger" role="alert">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span>
+                        $json_data[i].capitalize()
+                    </div>
+            $for i,v in enumerate(json_data["mensaje"], 1):
+                <p>$i</p>
         </div>
     </div>

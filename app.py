@@ -94,7 +94,6 @@ class Upload:
         #raise web.seeother('/severity?f=1')
         raise web.seeother('/severity?' + encoded_args)
 
-
 class Severity:
     def GET(self):
         json_data = json.dumps(web.input())
@@ -103,7 +102,19 @@ class Severity:
         #print "RESPOND:", respond.status_code
         #return respond.json()
         output = subprocess.check_output(['curl', '-XPOST', url, '-d', str(json_data)])
-        return render.severity(output)
+        #output = { "id": "1",
+        #           "porcentaje": "nivel de severidad mayor al 50%",
+        #           "mensaje":[{"medidas": "erradicantes",
+        #                       "tratamiento": "realice practicas culturales \
+        #                       como renovacion completa de los tallos \
+        #                       principales y eliminacion de residuos de \
+        #                       cosecha."}]}
+        #print dir(output["mensaje"])
+        json_data = json.dumps(output)
+        t = type(json_data)
+        #return render.severity(json.dumps(output, sort_keys=True))
+        return render.severity(t)
+        #return render.severity(output)
 
 
 if __name__ == "__main__":
