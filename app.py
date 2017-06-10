@@ -110,11 +110,9 @@ class Severity:
         #                       principales y eliminacion de residuos de \
         #                       cosecha."}]}
         #print dir(output["mensaje"])
-        json_data = json.dumps(output)
-        t = type(json_data)
+        json_data = json.loads(output)
         #return render.severity(json.dumps(output, sort_keys=True))
-        return render.severity(t)
-        #return render.severity(output)
+        return render.severity(json_data)
 
 
 if __name__ == "__main__":
