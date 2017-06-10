@@ -16,6 +16,12 @@ $def with(json_data)
                         $json_data[i].capitalize()
                     </div>
             $for i,v in enumerate(json_data["mensaje"], 1):
-                <p>$i</p>
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr><th scope="row">Medidas:</th><td>$v['medidas']</td></tr>
+                        <tr><th scope="row">Tratamiento:</th><td>$v['tratamiento']</td></tr>
+                    </tbody>
+                </table>
+
         </div>
     </div>
