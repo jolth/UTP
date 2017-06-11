@@ -102,16 +102,15 @@ class Severity:
         #print "RESPOND:", respond.status_code
         #return respond.json()
         output = subprocess.check_output(['curl', '-XPOST', url, '-d', str(json_data)])
-        #output = { "id": "1",
-        #           "porcentaje": "nivel de severidad mayor al 50%",
-        #           "mensaje":[{"medidas": "erradicantes",
-        #                       "tratamiento": "realice practicas culturales \
-        #                       como renovacion completa de los tallos \
-        #                       principales y eliminacion de residuos de \
-        #                       cosecha."}]}
-        #print dir(output["mensaje"])
+        #output = '{ "id": "1",\
+        #        "porcentaje": "nulo",\
+        #        "mensaje":[{\
+        #        "medidas": "preventivas",\
+        #        "tratamiento": "utilice fungicidas protectantes y practicas\
+        #        culturales."\
+        #        }]}'
         json_data = json.loads(output)
-        #return render.severity(json.dumps(output, sort_keys=True))
+        print(json.dumps(json_data, indent=4))
         return render.severity(json_data)
 
 
