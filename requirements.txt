@@ -1,2 +1,1 @@
 web.py==0.38
-requests==2.17.3
