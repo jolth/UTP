@@ -25,6 +25,10 @@ class Contact:
     def GET(self):
         return render.contact()
 
+    def POST(self):
+        input_data = web.input()
+        return input_data
+
 class Help:
     def GET(self):
         return render.help()
