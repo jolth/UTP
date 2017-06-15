@@ -2,21 +2,21 @@ $(document).ready( function() {
     //var _validFileExtensions = [".jpg", ".jpeg"];
     var reg = /\.(jpg|jpeg)/g;
 
+    $.validate({
+        modules : 'file'
+    });
+
     $(document).on('change', '.btn-file :file', function() {
 	    var input = $(this),
 			label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-            //console.log(input[0].type == 'file');
-            //console.log(input)
-            //console.log(label);
-            //'jorge.jpeg'.match(/\.(jpg|jpeg)/g)
-            if (input[0].type == 'file') {
+            /*if (input[0].type == 'file') {
                 if (!label.match(reg)) {
                     alert("No es un jpg/jpeg");
                     return; 
                 }
             } else {
                 return;
-            }
+            }*/
 		input.trigger('fileselect', [label]);
     });
 
