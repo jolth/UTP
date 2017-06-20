@@ -32,4 +32,15 @@ $(document).ready( function() {
 		}
 	    
 	});
+
+    function isFormValid() {
+        return $('#imgInp1').val() != "" && $('#imgInp2').val() != "" && $('#imgInp3').val() != "";
+    }
+
+    function toggleEnableContinue() {
+        $('#btn_send').prop('disabled', !isFormValid());
+    }
+
+    $('#imgInp1, #imgInp2, #imgInp3').change(toggleEnableContinue);
+
 });
