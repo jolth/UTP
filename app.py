@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import web
 from urls import urls
 import cgi
@@ -7,6 +8,9 @@ import json
 import subprocess
 #import requests
 #import simplejson as json
+import smtplib
+import email.utils
+from email.mime.text import MIMEText
 
 # Maximum input we will accept when REQUEST_METHOD is POST
 # 0 ==> unlimited input
@@ -27,7 +31,25 @@ class Contact:
 
     def POST(self):
         input_data = web.input()
-        return input_data
+        print "DATA:", input_data
+        #print "Nombre:", input_data.name
+        #print "email:", input_data.email
+        #print "Mensaje:", input_data.message
+
+        server = smtplib.SMTP('localhost')
+        server.set_debuglevel('True') #debugging
+
+        msg = MIMEText(input_data.message)
+        msg['To'] = email.utils.formataddr(('Recipient', 'soportemorant@gmail.com'))
+        #msg['Cc'] = email.utils.formataddr(('Recipient', input_data.email)) 
+        msg['From'] = email.utils.formataddr(('Author', 'morant'))
+        msg['Subject'] = "Contacto - Sitio Web Morant"
+        try:
+            server.sendmail('morant', 'soportemorant@gmail.com',
+                    msg.as_string())
+        finally:
+            server.quit()
+        return "El mensaje se ha enviado con éxito"
 
 class Help:
     def GET(self):
