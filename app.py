@@ -42,10 +42,10 @@ class Contact:
         msg = MIMEText(input_data.message)
         msg['To'] = email.utils.formataddr(('Recipient', 'soportemorant@gmail.com'))
         #msg['Cc'] = email.utils.formataddr(('Recipient', input_data.email)) 
-        msg['From'] = email.utils.formataddr(('Author', 'morant'))
+        msg['From'] = email.utils.formataddr(('Author', 'morant@localhost'))
         msg['Subject'] = "Contacto - Sitio Web Morant"
         try:
-            server.sendmail('morant', 'soportemorant@gmail.com',
+            server.sendmail('morant@localhost', 'soportemorant@gmail.com',
                     msg.as_string())
         finally:
             server.quit()
