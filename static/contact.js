@@ -13,7 +13,20 @@ $(document).ready(function () {
     $('#form_contact').submit(function(event) {
         event.preventDefault();
         $(this).hide();
-        $('#message').show();
+
+        var name = $('#inputName').val();
+        var email = $('#inputEmail').val();
+        var message = $('#inputMessage').val();
+
+        $.post('/contact',
+            {
+                name: name,
+                email: email,
+                message: message
+            },
+            function(data, status){
+                $('#message').html("<p>"+ data +"</p>").show();
+            });
     });
 
 });
